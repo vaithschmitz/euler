@@ -4,9 +4,9 @@ def largest_palindrome_product(n):
     i = n
 
     # outer dec loop through n
-    while i >= 1:
+    while i >= 100:
         # full run of inner decrementing loop (n, 1) for each outer n
-        while n >= 1 and i != 1:
+        while n >= 100 and i != 100:
             # multiple outer n and inner n
             res = i*n
             # if palindrome add to list
