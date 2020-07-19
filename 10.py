@@ -1,35 +1,24 @@
 import time
 
 start = time.time()
-primes = []
+prime_sum = 0
 
-def is_prime(n):
-    if n > 1:
-        for i in range(2, n):
-            if n % i == 0:
-                return False
-        return True
-    else:
-        return False
 
-i = 2
-res = 0
+prime = [True for i in range(1001)] 
+p = 2
 
-while i < 2000000:
-    if i % 2 == 0: 
-        i += 1
-    elif is_prime(i):
-        primes.append(i)
-        i +=1
-    else:
-        i+=1
-    print(primes)
+while p * p <= 1000:
+    if prime[p] == True:
+        for i in range(p*p, 1001, p):
+            prime[i] = False
+    p += 1
+
+print(prime)
+
+# print(prime_sum)
+
     
-
-for j in primes:
-    res += j
-print(f'res: {res}')
 end = time.time()
 duration = end -start
-
+print(prime_sum)
 print(f'time: {duration}')
