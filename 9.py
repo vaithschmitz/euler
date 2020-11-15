@@ -1,13 +1,20 @@
-triplet = []
-a, b, c = 1, 2, 3
-x =  0
-while x < 1000:
-    a+=1
-    b+=1
-    c+=1
-    x = a + b + c
-else: 
-    triplet.append([a, b, c])
-    print(triplet)
-    print(isinstance(a, int))
+# min val for c == 335 to confirm a<b<c == 1000 
+# max val for c == 997
+a=1
+b=2
+c=3
+def is_triplet(a,b,c):
+    if a**2 + b**2 == c**2:
+        print(a*b*c)
 
+for c in range(335, 997):
+    for b in range(2, c-b):
+        for a in range(2, b-a):
+            # print(a,b,c)
+            if(a+b+c) ==1000:
+                is_triplet(a,b,c)
+        if(a+b+c) ==1000:
+            is_triplet(a,b,c)
+    if(a+b+c) ==1000:
+        is_triplet(a,b,c)
+    
